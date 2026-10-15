@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.15.0 on win32)" generated="2026-10-14T15:11:26.135723" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\User\Desktop\robot2\tests">
+<suite id="s1-s1" name="Robot1" source="C:\Users\User\Desktop\robot2\tests\robot1.robot">
+<test id="s1-s1-t1" name="My First Test Case" line="2">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-14T15:11:26.161952" level="INFO">Hello, Robot Framework!</msg>
+<arg>Hello, Robot Framework!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.161770" elapsed="0.000223"/>
+</kw>
+<tag>Critical</tag>
+<tag>Positive</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2026-10-14T15:11:26.161313" elapsed="0.000808"/>
+</test>
+<test id="s1-s1-t2" name="Test Case 2" line="6">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-14T15:11:26.162713" level="INFO">This is a second test case.</msg>
+<arg>This is a second test case.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.162560" elapsed="0.000197"/>
+</kw>
+<tag>Negative</tag>
+<tag>Regression</tag>
+<status status="PASS" start="2026-10-14T15:11:26.162300" elapsed="0.000571"/>
+</test>
+<status status="PASS" start="2026-10-14T15:11:26.160520" elapsed="0.002688"/>
+</suite>
+<suite id="s1-s2" name="Robot2" source="C:\Users\User\Desktop\robot2\tests\robot2.robot">
+<test id="s1-s2-t1" name="Login and Logout" line="29">
+<kw name="Open chrome Incognito">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-14T15:11:26.352126" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000012D4AE81E80&gt;</msg>
+<var>${options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>modules=selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.349789" elapsed="0.002367"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.352260" elapsed="0.000319"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.352662" elapsed="0.000144"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:26.358572" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.352891" elapsed="0.405098"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:26.758455" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-14T15:11:26.758279" elapsed="0.772711"/>
+</kw>
+<status status="PASS" start="2026-10-14T15:11:26.349297" elapsed="1.181788"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:27.531657" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${SEL_USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.531332" elapsed="0.044701"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:27.576505" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${SEL_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.576293" elapsed="0.030436"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:27.607216" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${SEL_LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.607014" elapsed="0.035250"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEL_INVENTORY_CONTAINER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.642512" elapsed="0.032858"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:27.675894" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>${SEL_BURGER_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.675692" elapsed="0.023579"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-14T15:11:29.701064" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-10-14T15:11:27.699526" elapsed="2.001933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-10-14T15:11:29.704077" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>${SEL_LOGOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-14T15:11:29.703094" elapsed="0.036934"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-10-14T15:11:34.740846" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-10-14T15:11:29.740352" elapsed="5.000653"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-10-14T15:11:34.741584" elapsed="2.110146"/>
+</kw>
+<tag>Critical</tag>
+<tag>Positive</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2026-10-14T15:11:26.348840" elapsed="10.503782"/>
+</test>
+<status status="PASS" start="2026-10-14T15:11:26.163478" elapsed="10.691246"/>
+</suite>
+<status status="PASS" start="2026-10-14T15:11:26.136855" elapsed="10.719042"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Critical</stat>
+<stat pass="1" fail="0" skip="0">Negative</stat>
+<stat pass="2" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="2" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
+<stat name="Robot1" id="s1-s1" pass="2" fail="0" skip="0">Tests.Robot1</stat>
+<stat name="Robot2" id="s1-s2" pass="1" fail="0" skip="0">Tests.Robot2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
