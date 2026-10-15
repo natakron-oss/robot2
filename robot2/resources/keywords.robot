@@ -7,8 +7,8 @@ ${URL}                          https://www.saucedemo.com/
 ${HEADLESS}                     ${FALSE}
 ${USERNAME}                     standard_user
 ${PASSWORD}                     secret_sauce
-${FIRST_NAME}                   Suwanchai
-${LAST_NAME}                    Chaisuwansri
+${FIRST_NAME}                   B_SWAG
+${LAST_NAME}                    SUKUNA
 ${POSTAL_CODE}                  84280
 
 # Selectors
