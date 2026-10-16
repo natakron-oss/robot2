@@ -36,14 +36,17 @@ ${SEL_BACK_TO_PRODUCTS_BUTTON}  id=back-to-products
 
 *** Keywords ***
 Open Chrome Incognito
+    [Arguments]    ${detach}=${FALSE}
     ${options} =    Evaluate    selenium.webdriver.ChromeOptions()    modules=selenium.webdriver
     Call Method    ${options}    add_argument    --incognito
     Call Method    ${options}    add_argument    --start-maximized
+    Call Method    ${options}    add_experimental_option    detach    ${detach}
     IF    ${HEADLESS}
         Call Method    ${options}    add_argument    --headless=new
         Call Method    ${options}    add_argument    --window-size\=1920,1080
     END
     Create WebDriver    Chrome    options=${options}
+    Set Selenium Speed    1.5 seconds
     Go To    ${URL}
 
 Login With Valid User
